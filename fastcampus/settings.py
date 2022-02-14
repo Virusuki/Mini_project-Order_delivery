@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'project1',
         'USER' : 'admin',
         'PASSWORD':'qwer1234!',
-        'HOST':'database-1.c5qtrbunjm39.ap-northeast-2.rds.amazonaws.com',
+        'HOST':'database-2.c5qtrbunjm39.ap-northeast-2.rds.amazonaws.com',
         'PORT':'3306',
     }
 }
