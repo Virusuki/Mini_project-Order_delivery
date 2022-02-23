@@ -7,19 +7,28 @@ from user.models import User
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 
-'''
+
 @csrf_exempt
-def shop(request):
+def user(request):
     if request.method == 'GET':    
         user = User.objects.all()
-        return render(request, 'order/shop_list.html', {'user_list':shop})
+        return render(request, 'user/user_list.html', {'user_list':user})
         
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = ShopSerializer(data=data)
+        serializer = UserSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
-'''
+
+@csrf_exempt
+def login(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        print(User.objects.all().get(name=name))
+        return render(request, 'user/success.html')
+    
+    elif request.method == 'GET':
+        return render(request, 'user/login.html')

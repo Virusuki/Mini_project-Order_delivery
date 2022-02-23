@@ -25,10 +25,7 @@ SECRET_KEY = 'django-insecure-n(*ywlm2+&(p9*2-$#ygds3_2!%6&uo28fjoj9rl2xlqtv&b%#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-13-209-50-128.ap-northeast-2.compute.amazonaws.com',
-                 'elb1-983893608.ap-northeast-2.elb.amazonaws.com',
-                 'ec2-15-164-48-202.ap-northeast-2.compute.amazonaws.com'
-                 '172.31.41.168']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -88,7 +85,7 @@ DATABASES = {
         'NAME': 'project1',
         'USER' : 'admin',
         'PASSWORD':'qwer1234!',
-        'HOST':'database-2.c5qtrbunjm39.ap-northeast-2.rds.amazonaws.com',
+        'HOST':'database-1.ciptwk5q6fh3.ap-northeast-2.rds.amazonaws.com',
         'PORT':'3306',
     }
 }
