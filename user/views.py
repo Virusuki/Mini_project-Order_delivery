@@ -27,8 +27,11 @@ def user(request):
 def login(request):
     if request.method == 'POST':
         name = request.POST['name']
-        print(User.objects.all().get(name=name))
-        return render(request, 'user/success.html')
+        try:
+            print(User.objects.all().get(name=name))
+            return render(request, 'user/success.html')
+        except:
+            return render(request, 'user/fail.html')
             
     elif request.method == 'GET':
         return render(request, 'user/login.html')
